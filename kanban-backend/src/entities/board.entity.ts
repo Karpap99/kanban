@@ -5,7 +5,7 @@ import { BaseEntity } from './base.entity';
 @Entity('board')
 export class BoardEntity extends BaseEntity {
   @Column({ type: 'varchar', length: 255 })
-  name!: string;
+  title!: string;
 
   @Column({ type: 'varchar', length: 1024, nullable: true })
   description?: string;

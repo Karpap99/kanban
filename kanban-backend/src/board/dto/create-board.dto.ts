@@ -5,7 +5,7 @@ export class CreateBoardDto {
   @ApiProperty({ required: true })
   @IsString()
   @MinLength(3)
-  name!: string;
+  title!: string;
 
   @ApiProperty({ required: false })
   @IsString()

@@ -1,0 +1,68 @@
+.board-shortcut {
+    position: relative;
+    padding: 5px 10px;
+    background: linear-gradient(
+        to bottom right,
+        rgba(187, 187, 187, 0.055),
+        rgba(155, 155, 155, 0.199)
+    );
+    overflow: hidden;
+    border-radius: 10px;
+    width: 300px;
+    height: 160px;
+    gap: 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.board-shortcut::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom right,
+        rgba(158, 133, 172, 0.199),
+        rgba(238, 94, 130, 0.199)
+    );
+    filter: blur(2px);
+    z-index: -1;
+}
+
+.board-shortcut__title{
+    margin: 0;
+}
+
+.board-shortcut__public_id {
+    color: gray;
+}
+
+.board-shortcut__description {
+    margin: 0;
+    flex: 1;
+}
+
+.board-shortcut:hover{
+    cursor: pointer;
+}
+
+.board-shortcut__controls{
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    padding: 2px;
+    align-items: center;
+    justify-content: end;
+}
+
+.board-shortcut__control{
+    border-radius: 5px;
+    padding: 3px;
+    border: 1px solid transparent;
+}
+
+.board-shortcut hr {
+    border: 0;
+    background-color: black;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    margin: 3px 0;
+}
