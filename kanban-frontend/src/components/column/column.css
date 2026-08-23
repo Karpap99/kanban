@@ -1,0 +1,97 @@
+.kanban-column {
+    --column-color: var(--accent);
+    display: flex;
+    height: min(620px, calc(100vh - 220px));
+    min-height: 420px;
+    flex-direction: column;
+    border: 1px solid var(--column-color);
+    border-radius: 4px;
+    background: var(--surface-muted);
+    overflow: hidden;
+    transition: background 160ms ease, border-color 160ms ease;
+}
+
+.kanban-column:has(.kanban-card:active) {
+    border-color: var(--column-color);
+}
+
+.kanban-column--drag-over {
+    border-width: 2px;
+    background: #dce6ff;
+    outline: 2px solid var(--column-color);
+}
+
+.kanban-column--drag-over .kanban-column__header {
+    background: #edf2ff;
+}
+
+.kanban-column__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--line);
+    background: var(--surface);
+}
+
+.kanban-column__title {
+    margin: 0;
+    padding: 0;
+    color: var(--ink);
+    font-size: 16px;
+}
+
+.kanban-column__count {
+    display: grid;
+    min-width: 28px;
+    height: 28px;
+    place-items: center;
+    border-radius: 50%;
+    background: #d1d5db;
+    margin: 0;
+    padding: 0;
+    color: #374151;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.kanban-column__cards {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px;
+    overflow-y: auto;
+}
+
+.kanban-column__empty {
+    margin: auto 0;
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+}
+
+.kanban-column__footer {
+    padding: 12px 14px 14px;
+    border-top: 1px solid var(--line);
+    background: var(--surface);
+}
+
+.kanban-column__add {
+    width: 100%;
+    min-height: 40px;
+    border: 1px dashed #8194ae;
+    border-radius: 8px;
+    background: var(--surface-muted);
+    color: var(--accent);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.kanban-column__add:hover {
+    border-style: solid;
+    background: #e3ebff;
+}

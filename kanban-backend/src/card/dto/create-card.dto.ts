@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsEnum, IsString, IsUUID } from 'class-validator';
+import { IsEnum, IsString } from 'class-validator';
 import { CardStatus } from '../enum/cardstatus';
 
 export class CreateCardDto {
@@ -19,6 +19,6 @@ export class CreateCardDto {
   public status!: CardStatus;
 
   @ApiProperty({ required: true })
-  @IsUUID()
+  @IsString()
   boardId!: string;
 }

@@ -6,6 +6,10 @@ import {
   Patch,
   Param,
   Delete,
+  DefaultValuePipe,
+  ParseIntPipe,
+  Query,
+  Logger,
 } from '@nestjs/common';
 import { BoardService } from './board.service';
 import { CreateBoardDto } from './dto/create-board.dto';
@@ -17,12 +21,17 @@ export class BoardController {
 
   @Post()
   create(@Body() createBoardDto: CreateBoardDto) {
+    Logger.log(createBoardDto);
     return this.boardService.create(createBoardDto);
   }
 
   @Get()
-  findAll() {
-    return this.boardService.findAll();
+  findAll(
+    @Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number,
+    @Query('limit', new DefaultValuePipe(12), ParseIntPipe) limit: number,
+    @Query('search') search?: string,
+  ) {
+    return this.boardService.findAll(page, limit, search);
   }
 
   @Get(':id')

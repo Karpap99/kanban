@@ -1,68 +1,76 @@
 .board-shortcut {
     position: relative;
-    padding: 5px 10px;
-    background: linear-gradient(
-        to bottom right,
-        rgba(187, 187, 187, 0.055),
-        rgba(155, 155, 155, 0.199)
-    );
+    padding: 20px;
+    background: var(--surface);
+    border: 1px solid var(--line);
     overflow: hidden;
-    border-radius: 10px;
-    width: 300px;
-    height: 160px;
-    gap: 2px;
+    border-radius: 4px;
+    min-width: 0;
+    min-height: 176px;
+    gap: 8px;
     display: flex;
     flex-direction: column;
 }
 
-.board-shortcut::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to bottom right,
-        rgba(158, 133, 172, 0.199),
-        rgba(238, 94, 130, 0.199)
-    );
-    filter: blur(2px);
-    z-index: -1;
-}
-
 .board-shortcut__title{
     margin: 0;
+    z-index: 1;
+    width: 100%;
+    color: var(--ink);
+    font-size: 18px;
+    line-height: 1.35;
 }
 
 .board-shortcut__public_id {
-    color: gray;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: copy;
 }
 
 .board-shortcut__description {
-    margin: 0;
+    margin: 0 0 8px;
     flex: 1;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.55;
 }
 
 .board-shortcut:hover{
     cursor: pointer;
+    border-color: #7192d1;
+    background: #f7f9fb;
 }
 
 .board-shortcut__controls{
     width: 100%;
     display: flex;
-    gap: 5px;
-    padding: 2px;
+    gap: 8px;
     align-items: center;
     justify-content: end;
 }
 
 .board-shortcut__control{
-    border-radius: 5px;
-    padding: 3px;
-    border: 1px solid transparent;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 7px 10px;
+    background: var(--surface-muted);
+    color: #526173;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.board-shortcut__control:hover {
+    color: var(--accent);
+    border-color: #7192d1;
+    background: #e3ebff;
 }
 
 .board-shortcut hr {
+    width: 100%;
     border: 0;
-    background-color: black;
-    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid var(--line);
     margin: 3px 0;
 }

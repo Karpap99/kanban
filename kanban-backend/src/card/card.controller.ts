@@ -25,6 +25,11 @@ export class CardController {
     return this.cardService.findAll();
   }
 
+  @Get('board/:boardId')
+  findByBoardId(@Param('boardId') boardId: string) {
+    return this.cardService.findByBoardId(boardId);
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.cardService.findOne(id);

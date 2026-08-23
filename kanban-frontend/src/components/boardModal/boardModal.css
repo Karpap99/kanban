@@ -1,0 +1,116 @@
+.board-modal{
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    padding: 20px;
+    background-color: rgba(23, 32, 42, 0.28);
+}
+
+.board-modal__form{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: min(100%, 480px);
+    background-color: var(--surface);
+    padding: 28px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+}
+
+.board-modal__field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.board-modal__field-label {
+    position: absolute;
+    top: -8px;
+    left: 11px;
+    z-index: 1;
+    padding: 0 5px;
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+}
+
+.board-modal__input, .board-modal__textarea, .board-modal__button {
+    border-radius: 4px;
+    min-height: 50px;
+    width: 100%;
+    max-width: none;
+    font-size: 15px;
+    margin: 0;
+    padding: 12px 14px;
+    outline: 0;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--ink);
+    box-shadow: none;
+}
+
+.board-modal__input:focus, .board-modal__textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(29, 78, 216, 0.25);
+}
+
+.board-modal__field:focus-within .board-modal__field-label {
+    color: var(--accent);
+}
+
+.board-modal__input[aria-invalid="true"] {
+    border-color: #b91c1c;
+}
+
+.board-modal__error {
+    margin: 0 4px;
+    color: #b91c1c;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.board-modal__textarea{
+    min-height: 150px;
+    resize: vertical;
+}
+
+.board-modal__button{
+    flex: 1;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.board-modal__button--submit {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: white;
+}
+
+.board-modal__button--submit:hover {
+    background: var(--accent-dark);
+}
+
+.board-modal__button--cancel {
+    background: var(--surface-muted);
+    color: #526173;
+}
+
+.board-modal__button--cancel:hover {
+    border-color: #8194ae;
+}
+
+.board-modal__actions{
+    display: flex;
+    gap: 12px;
+    justify-content: space-between
+}
+
